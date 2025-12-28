@@ -2,7 +2,7 @@ Product Catalog Management Service Spring Boot üzərində hazırlanmış bir ba
 
 🔹 Texnologiyalar
 
-Java 21
+Java 25
 
 Spring Boot 4.0.1
 
