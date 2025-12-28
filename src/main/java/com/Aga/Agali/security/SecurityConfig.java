@@ -51,6 +51,8 @@ public class SecurityConfig {
                         .hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/rest/api/products/**")
                         .hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/admin/create")
+                        .hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .httpBasic(Customizer.withDefaults())

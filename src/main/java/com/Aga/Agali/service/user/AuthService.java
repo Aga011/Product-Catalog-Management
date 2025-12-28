@@ -2,6 +2,7 @@ package com.Aga.Agali.service.user;
 
 import com.Aga.Agali.dto.request.RegisterRequest;
 import com.Aga.Agali.dto.response.UserResponse;
+import com.Aga.Agali.entity.Role;
 import com.Aga.Agali.entity.User;
 import com.Aga.Agali.mapper.UserMapper;
 import com.Aga.Agali.repository.UserRepository;
@@ -50,5 +51,16 @@ public class AuthService implements IAuthService {
         }
 
         return userMapper.toResponse(user);
+    }
+    public User createAdmin(RegisterRequest request) {
+        return User.builder()
+                .firstName(request.getFirstName())
+                .lastName(request.getLastName())
+                .nickName(request.getNickName())
+                .email(request.getEmail())
+                .phoneNumber(request.getPhoneNumber())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .role(Role.ADMIN)
+                .build();
     }
 }
