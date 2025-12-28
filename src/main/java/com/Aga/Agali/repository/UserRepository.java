@@ -1,0 +1,18 @@
+package com.Aga.Agali.repository;
+
+import com.Aga.Agali.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+
+@Repository
+public interface UserRepository extends JpaRepository<User,Long> {
+    Optional<User> findByNickName(String nickName);
+
+    boolean existsByEmail(String email);
+
+    boolean existsByPhoneNumber(String phoneNumber);
+
+    boolean existsByNickName(String nickName);
+}
