@@ -60,7 +60,7 @@ public class AuthService implements IAuthService {
                 .email(request.getEmail())
                 .phoneNumber(request.getPhoneNumber())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.ADMIN)
+                .role(Role.Role_ADMIN)
                 .build();
     }
 }

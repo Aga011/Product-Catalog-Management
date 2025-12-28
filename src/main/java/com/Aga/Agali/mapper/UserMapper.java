@@ -18,7 +18,7 @@ public class UserMapper {
                 .email(request.getEmail())
                 .phoneNumber(request.getPhoneNumber())
                 .password(request.getPassword())
-                .role(Role.USER)
+                .role(Role.Role_USER)
                 .build();
     }
 
